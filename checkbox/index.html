@@ -16,15 +16,25 @@
         }
 
         div {
-            width: 100px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
+        }
+
+        p {
+            position: absolute;
+            width: 400px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         label {
             display: block;
+            width: 50px;
         }
 
         label:hover {
@@ -67,7 +77,16 @@
                 <path fill="white" style="fill-rule:evenodd;clip-rule:evenodd;" d="M32.5,10.5l1,1l2.5-2.5l-1-1L32.5,10.5z M32.5,13.5L35,16l1-1l-2.5-2.5L32.5,13.5z M32,11l-3-3l-1,1l3,3l-3,3l1,1l3-3l1-1L32,11z"/>
             </svg>
         </label>
-    </div>
-</body>
 
+        <p>Checkbox is <span>unchecked</span></p>
+    </div>
+
+    <script>
+        jQuery(() => {
+            $('body').on('change', 'input[type="checkbox"]', function() {
+                $('p span').text($(this).is(":checked") ? 'checked' : 'unchecked');
+            });
+        })
+    </script>
+</body>
 </html>
