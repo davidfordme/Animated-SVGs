@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Checkbox/SVG</title>
+    <style>
+        body, html {
+            background-color: #605A6E;
+            margin: 0;
+            padding: 0;
+        }
+
+        body * {
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        label {
+            display: block;
+        }
+
+        label:hover {
+            cursor: pointer;
+        }
+
+        svg {
+            border-radius: 48px;
+            background-color: #8F9296;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        svg circle {
+            transition: cx 0.2s ease-in-out;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+        
+        input:checked ~ svg {
+            background-color: #078375;
+        }
+
+        input:checked ~ svg circle {
+            cx: 32;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div>
+        <label for="checkbox">
+            <input id="checkbox" type="checkbox" />
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 44 24" style="enable-background:new 0 0 44 24;" xml:space="preserve">
+                <circle fill="white" cx="12" cy="12" r="8"/>
+                <path fill="white" style="fill-rule:evenodd;clip-rule:evenodd;" d="M15.6,8.6l-4.9,4.9l-2.3-2.3l-0.9,0.9l3.2,3.2l5.8-5.8L15.6,8.6z"/>
+                <path fill="white" style="fill-rule:evenodd;clip-rule:evenodd;" d="M32.5,10.5l1,1l2.5-2.5l-1-1L32.5,10.5z M32.5,13.5L35,16l1-1l-2.5-2.5L32.5,13.5z M32,11l-3-3l-1,1l3,3l-3,3l1,1l3-3l1-1L32,11z"/>
+            </svg>
+        </label>
+    </div>
+</body>
+
+</html>
